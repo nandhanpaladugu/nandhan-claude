@@ -1,3 +1,7 @@
+llm: 
+ provider: anthropic       # openai | anthropic 
+ model: claude-opus-5
+
 embeddings: 
  provider: openai              
  model: text-embedding-3-small 
@@ -6,6 +10,20 @@ chromadb:
  persist_dir: .chromadb/ 
  collection_name: codebase 
  
-elasticsearch: 
- url: http://localhost:9200 
+elasticsearch:
+ url: http://localhost:9200
  index_name: codebase
+
+
+
+qdrant:
+ collection_name: codebase
+
+
+rag:
+ mode: hybrid           # semantic | hybrid
+
+
+vector_store:
+ provider: qdrant
+ retrieval_mode: hybrid 
